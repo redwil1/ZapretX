@@ -29,11 +29,15 @@ Zapret doesn't give you a VPN — it reshapes your own traffic (fake packets, TT
 
 ## Running it
 
+Double-click **`ZapretRW.cmd`**. (Double-clicking `ZapretRW.ps1` itself just opens it in Notepad — that's Windows' default for PowerShell scripts.)
+
+The launcher runs:
+
 ```
-powershell -WindowStyle Hidden -NoProfile -File ZapretRW.ps1
+powershell -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File ZapretRW.ps1
 ```
 
-Or point a shortcut at `powershell.exe` with those arguments so no console window ever flashes up.
+`-ExecutionPolicy Bypass` is needed because a folder downloaded from GitHub is marked as coming from the internet, and Windows would otherwise refuse to run the script. To get a desktop icon, right-click `ZapretRW.cmd` → *Send to* → *Desktop (create shortcut)*.
 
 ## How it works under the hood
 
